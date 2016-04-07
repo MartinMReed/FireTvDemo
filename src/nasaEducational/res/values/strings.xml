@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="app_name">NASA Educational</string>
+    <string name="video_url">http://nasatv-lh.akamaihd.net/i/NASA_101@319270/master.m3u8</string>
+</resources>

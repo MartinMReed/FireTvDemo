@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    defaultConfig {
+        applicationId 'tv.fire'
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName '1'
+    }
+
+    productFlavors {
+        msnbc { applicationId 'tv.fire.msnbc' }
+        abcLive2 { applicationId 'tv.fire.abc.live2' }
+        nasaEducational { applicationId 'tv.fire.nasa.educational' }
+    }
+
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    dexOptions {
+        jumboMode = true
+        incremental true
+        javaMaxHeapSize '4g'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    aaptOptions {
+        useNewCruncher true
+    }
+
+    splits {
+        abi {
+            universalApk true
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.1'
+}
+
+repositories {
+    mavenLocal()
+    /*jcenter()*/ maven { url 'http://jcenter.bintray.com' }
+    /*mavenCentral()*/ maven { url 'http://repo1.maven.org/maven2' }
+}
+
+buildscript {
+
+    repositories {
+        mavenLocal()
+        /*jcenter()*/ maven { url 'http://jcenter.bintray.com' }
+        /*mavenCentral()*/ maven { url 'http://repo1.maven.org/maven2' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0-beta6'
+    }
+}

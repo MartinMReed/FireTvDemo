@@ -1,0 +1,17 @@
+.DS_Store
+.svn
+/target
+/bin
+/gen
+/*.iml
+/build
+/.gradle
+/local.properties
+/captures
+.idea/
+
+# eclipse
+/.project
+/.classpath
+/.settings
+/project.properties

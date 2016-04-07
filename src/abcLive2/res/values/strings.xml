@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="app_name">ABC Live 2</string>
+    <string name="video_url">http://abclive.abcnews.com/i/abc_live2@136328/index_2500_av-b.m3u8</string>
+</resources>
